@@ -1,0 +1,586 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /*----------------------------------------------------------------------------------------------------------------------------*/
+        *{
+            font-family:'Sitka Text';
+        }
+        /*----------------------------------------------------------------------------------------------------------------------------*/
+        /*scroll*/
+        html {
+            scroll-behavior: smooth;
+        }
+        /*----------------------------------------------------------------------------------------------------------------------------*/
+        /*buttnes*/
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button2 {
+            background-color: white;
+            color: black;
+            border: 2px solid #008CBA;
+        }
+
+            .button2:hover {
+                background-color: #008CBA;
+                color: white;
+            }
+
+        .button3 {
+            background-color: white;
+            color: black;
+            border: 2px solid #008CBA;
+        }
+
+            .button3:hover {
+                background-color: #357a37;
+                color: white;
+            }
+        /*----------------------------------------------------------------------------------------------------------------------------*/
+        /*hr*/
+        hr {
+            border-color: grey;
+            width: 8%;
+            border-style: dotted;
+            border-bottom: none;
+            border-width: 5px;
+        }
+        /*----------------------------------------------------------------------------------------------------------------------------*/
+        /*a*/
+        a {
+            text-decoration: none;
+            padding: 20px;
+        }
+        /*----------------------------------------------------------------------------------------------------------------------------*/
+        /*selection*/
+        ::selection {
+            user-select: elements;
+        }
+        /*----------------------------------------------------------------------------------------------------------------------------*/
+        .page {
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 640px;
+        }
+        /*----------------------------------------------------------------------------------------------------------------------------*/
+        .line-1 {
+            position: relative;
+            top: 50%;
+            width: 24em;
+            margin: 0 auto;
+            border-right: 2px solid rgba(255,255,255,.75);
+            font-size: 180%;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            transform: translateY(-50%);
+        }
+
+        /*----------------------------------------------------------------------------------------------------------------------------*/
+        /* Animation */
+        .anim-typewriter {
+            animation: typewriter 4s steps(44) infinite;
+        }
+
+        @keyframes typewriter {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 24em;
+            }
+        }
+
+        @keyframes blinkTextCursor {
+            from {
+                border-right-color: rgba(255,255,255,.75);
+            }
+
+            to {
+                border-right-color: transparent;
+            }
+        }
+
+        /*----------------------------------------------------------------------------------------------------------------------------*/
+        /*content*/
+        p.contactemail {
+            text-align: center;
+            border-style: solid;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 640px;
+        }
+
+        /*----------------------------------------------------------------------------------------------------------------------------*/
+        /*shining*/
+        .shiny {
+            text-align: center;
+            font-size: 30px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            background: linear-gradient(100deg, black,#4e97cc,#4e97cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-repeat: no-repeat;
+            background-size: 80%;
+            position: relative;
+            animation: shine 9s infinite backwards;
+        }
+
+        @keyframes shine {
+            from {
+                background-position-x: -500%;
+            }
+
+            to {
+                background-position-x: 500%;
+            }
+        }
+        /*----------------------------------------------------------------------------------------------------------------------------*/
+        .type-container {
+            position: relative;
+            font-size: 1.8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #line {
+            position: relative;
+        }
+
+        .cursor {
+            height: 2rem;
+            width: 2px;
+            margin-left: 2px;
+            background: rgba(255,255,255,.75);
+            animation: blinkTextCursor 800ms infinite;
+        }
+
+        @keyframes blinkTextCursor {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+        /*----------------------------------------------------------------------------------------------------------------------------*/
+        /*Tooltip-TOP*/
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: none;
+        }
+
+            .tooltip .tooltiptext {
+                visibility: hidden;
+                width: 120px;
+                background-color: black;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px 0;
+                /* Position the tooltip */
+                position: absolute;
+                z-index: 1;
+                bottom: 120%;
+                left: 50%;
+                margin-left: -60px;
+            }
+
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+            }
+        /*----------------------------------------------------------------------------------------------------------------------------*/
+        /*Tooltip-Bottom*/
+        .tooltipBottom {
+            position: relative;
+            display: inline-block;
+        }
+
+            .tooltipBottom .tooltiptext {
+                visibility: hidden;
+                width: 120px;
+                background-color: black;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px 0;
+                /* Position the tooltip */
+                position: absolute;
+                z-index: 1;
+                top: 120%;
+                left: 50%;
+                margin-left: -60px;
+            }
+
+            .tooltipBottom:hover .tooltiptext {
+                visibility: visible;
+            }
+        /*----------------------------------------------------------------------------------------------------------------------------*/
+        /*SKILLS*/
+        .page1 {
+            position: center;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 640px;
+        }
+        /*----------------------------------------------------------------------------------------------------------------------------*/
+
+    </style>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.13.0/devicon.min.css">
+    <meta charset="utf-8" />
+    <title>Ariel Marchini | Home Page</title>
+</head>
+<body style="background-image: url('image/backforwhite.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%; ">
+
+    <div dir="ltr" align="center">
+
+        <p style="margin-top:20px;color:#4e97cc;font-size:60px">
+            <b> Ariel Marchini</b>
+        </p>
+        <p class="line-1 anim-typewriter" style="margin-top:20px;">
+            <b>  Wellcome to my WEB!</b>
+        </p>
+        <img src="image/myownpic.png" alt="Ariel pic" width="450" height="450" style="margin-bottom:20px">
+        <br>
+        <br><br>
+        <div class="tooltip">
+            <a href="https://twitter.com/ArielMarchini"><i style="font-size:60px; padding:20px" class="devicon-twitter-original colored"></i></a>
+            <span class="tooltiptext">Twitter<br>Ariel Marchini</span>
+        </div>
+        <div class="tooltip">
+            <a href="https://github.com/search?q=ariel+marchini"><i style="font-size:65px;" class="devicon-github-original-wordmark"></i></a>
+            <span class="tooltiptext">Github<br>ArielMarchini</span>
+        </div>
+        <div class="tooltip">
+            <a href="https://www.linkedin.com/in/ariel-marchini-857768209/"><i title="Ariel Marchini" style="font-size: 60px; padding: 40px" class="devicon-linkedin-plain colored"></i></a>
+            <span class="tooltiptext">Linkedin<br>Ariel Marchini</span>
+        </div>
+        <div class="tooltip">
+            <a href="https://www.instagram.com/ariel.marchini/"><img title="ariel.marchini" style="margin: 0px 0px 0px 0px" width="60" height="60" src="image/instagram.png" /></a>
+            <span class="tooltiptext">Instagram<br>ariel.marchini</span>
+        </div>
+    </div>
+
+    <br>
+
+    <hr style="border-color: grey; border-style: ridge; border-bottom: none; width: 100%; ">
+
+    <div class="shiny">
+        <h3><b>Soo What do U want to see?</b></h3>
+    </div>
+    <p style="font-size:xx-large;text-align:center">
+        <a style="color: black; padding: 30px; font-size: x-large" href="#I"><button style="font-size:x-large" class="button button2">ABOUT</button></a>
+        <a style="color: black; padding: 30px; font-size: x-large" href="#ski"><button style="font-size:x-large" class="button button2">SKILLS</button></a>
+        <a style="color: black; padding: 30px; font-size: x-large" href="#accomplishments"><button style="font-size:x-large" class="button button2">ACCOMPLISHMENTS </button></a>
+        <a style="color: black; padding: 30px; font-size: x-large" href="#con"><button style="font-size:x-large" class="button button2">CONTACT</button></a>
+        <br><br><br>
+        <button style="font-size:x-large" class="button button3" onclick="PLAY()">LET'S PLAY FIRST!</button>
+        <br><br>
+        <p id="PLAYFIRST" style="font-size:30px;text-align:center"></p>
+        <br><br>
+            <div id="PLAYFIRST1" style="font-size:30px;text-align:center; color:white; text-decoration:underline;" onclick="Answer()">The Answer</div>
+    </p>
+
+    <br><br><br><br>
+    <br><br><br><br>
+    <hr>
+    <br><br><br><br>
+
+    <h1 style="text-align: center; color: #4e97cc;margin-bottom:15px" id="I">ABOUT ME</h1>
+    <h3 style="text-align: center; color: #4e97cc">who i am</h3>
+    <div class="page">
+        <p style="font-size:36px; text-align:center;">
+            <i>Hey!</i>👋<br>
+            I’m Ariel Marchini and I am 17 years old. I am a student and programmer.<br>
+            👀 I’m interested in Computer Science, Math and Physics.<br>
+            My hobbies are: playing chess, travel with friends, reading and working about projects.
+        </p>
+    </div>
+    <br><br><br>
+    <hr>
+    <br><br><br>
+
+    <h1 style="text-align: center; color: #4e97cc; margin-bottom: 15px" id="ski">SKILLS</h1>
+    <h3 style="text-align: center; color: #4e97cc">what i can do</h3>
+    <div class="page1">
+        <p style="text-align:center;font-size:x-large">
+            <!--Tooltip-TOP-->
+            <div class="tooltip" style="margin-left:11%;">
+                <i style="font-size:80px" class="devicon-csharp-plain"></i>
+                <span class="tooltiptext">C#</span>
+            </div>
+            <div class="tooltip">
+                <i style="font-size:80px" class="devicon-html5-plain-wordmark"></i>
+                <span class="tooltiptext">HTML5</span>
+            </div>
+            <div class="tooltip">
+                <i style="font-size:80px" class="devicon-nodejs-plain"></i>
+                <span class="tooltiptext">JavaScript</span>
+            </div>
+            <div class="tooltip">
+                <i style="font-size:80px" class="devicon-css3-plain-wordmark"></i>
+                <span class="tooltiptext">CSS</span>
+            </div>
+            <div class="tooltip">
+                <i style="font-size:80px" class="devicon-android-plain"></i>
+                <span class="tooltiptext">Android</span>
+            </div>
+            <div class="tooltip">
+                <i style="font-size:80px" class="devicon-python-plain-wordmark"></i>
+                <span class="tooltiptext">Python</span>
+            </div>
+            <br>
+            <!--Tooltip-Bottom-->
+            <div class="tooltipBottom" style="margin-left:12%;">
+                <i style="font-size:80px" class="devicon-github-original-wordmark"></i>
+                <span class="tooltiptext">C#</span>
+            </div>
+            <div class="tooltipBottom">
+                <i style="font-size:80px" class="devicon-visualstudio-plain"></i>
+                <span class="tooltiptext">VisualStudio</span>
+            </div>
+            <div class="tooltipBottom">
+                <i style="font-size:80px" class="devicon-atom-original"></i>
+                <span class="tooltiptext">Atom</span>
+            </div>
+            <div class="tooltipBottom">
+                <i style="font-size:80px" class="devicon-photoshop-line"></i>
+                <span class="tooltiptext">Photoshop</span>
+            </div>
+            <div class="tooltipBottom">
+                <i style="font-size:80px" class="devicon-chrome-plain"></i>
+                <span class="tooltiptext">Chrome</span>
+            </div>
+            <div class="tooltipBottom">
+                <i style="font-size:80px" class="devicon-unity-original"></i>
+                <span class="tooltiptext">Unity</span>
+            </div>
+            <br><br><br>
+            <div class="type-container" style="color:red">
+                <p style="color:#fff">.</p>
+                <p id="line"></p>
+                <div class="cursor"></div>
+                <br>
+                <p style="color:#fff">.</p>
+            </div>
+        </p>
+    </div>
+
+    <br><br><br>
+    <hr>
+    <br><br><br>
+
+    <h1 style="text-align: center; color: #4e97cc" id="accomplishments">ACCOMPLISHMENTS</h1>
+
+    <h3 style="text-align: center; color: #4e97cc">School accomplishments:<br> I am studying  at Makif YG - Yitzhak Navon</h3>
+    <table border="0" align="center" style="font-size:28px;color:black" cellspacing="20" class="page">
+        <tr>
+            <th>
+                Grade
+            </th>
+            <th>
+                Semester
+            </th>
+            <th>
+                Rating
+            </th>
+            <th>
+                Avg
+            </th>
+            <th>
+                Certificates of Excellence
+            </th>
+        </tr>
+
+        <tr>
+            <td>
+                9th
+            </td>
+            <td>
+                1
+            </td>
+            <td>
+                3/130+
+            </td>
+            <td>
+                94
+            </td>
+            <td>
+                straight-A student, Excellence in technological fields
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                9th
+            </td>
+            <td>
+                2
+            </td>
+            <td>
+                1/130+
+            </td>
+            <td>
+                97
+            </td>
+            <td>
+                straight-A student, Excellence in technological fields, Highest grade average
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                10th
+            </td>
+            <td>
+                1
+            </td>
+            <td>
+                1/120+
+            </td>
+            <td>
+                97
+            </td>
+            <td>
+                straight-A student, Excellence in technological fields, Highest grade average
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                10th
+            </td>
+            <td>
+                2
+            </td>
+            <td>
+                1/120+
+            </td>
+            <td>
+                98
+            </td>
+            <td>
+                straight-A student, Excellence in technological fields, Highest grade average
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                11th
+            </td>
+            <td>
+                1
+            </td>
+            <td>
+                1/110+
+            </td>
+            <td>
+                98
+            </td>
+            <td>
+                straight-A student, Excellence in technological fields, Highest grade average
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                11th
+            </td>
+            <td>
+                2
+            </td>
+            <td>
+                1/110+
+            </td>
+            <td>
+                97
+            </td>
+            <td>
+                straight-A student, Excellence in technological fields, Highest grade average
+            </td>
+        </tr>
+    </table>
+
+    <br><br><br>
+    <hr>
+    <br><br><br>
+
+    <h1 style="text-align: center; color: #4e97cc" id="con">STAY IN TOUCH</h1>
+    <p class="contactemail">SEND MESSAGE TO MY EMAIL: <br><br> <span style="font-family: 'Book Antiqua';font-size:25px"><b>arielmar336@gmail.com</b></span><br><br> YOU CAN ALSO REACH ME IN <span style="font-size:25px"><i>Linkedin</i></span>, <span style="font-size:25px"><i>Instagram</i></span> AND MORE</p>
+
+</body>
+</html>
+<script>
+    var line = document.getElementById("line")
+    var txts = ['APPLICATIONS', 'WEBSITES'];
+    var speed = 200
+
+    async function typewriter(txt) {
+        for (let i = 0; i < txt.length; i++) {
+            line.innerHTML += txt.charAt(i);
+            await delay(speed)
+        }
+    }
+
+    async function reverseTypewriter(txt) {
+        for (let i = txt.length; i > 0; i--) {
+            line.innerHTML = line.innerHTML.slice(0, -1)
+            await delay(speed)
+        }
+    }
+
+    async function writeLoop() {
+
+        for (let i = 0; i < txts.length; i++) {
+            await typewriter(txts[i])
+            await delay(1000)
+            await reverseTypewriter(txts[i])
+            await delay(300)
+        }
+
+        writeLoop()
+    }
+
+    function delay(ms) {
+        return new Promise((resolve) => { setTimeout(() => { resolve() }, ms) })
+    }
+
+    writeLoop()
+    /*----------------------------------------------------------------------------------------------------------------------------*/
+    function PLAY() {
+        document.getElementById("PLAYFIRST").innerHTML = "It is impossible for me to be created, and I can never be destroyed, I can only change form. What am I?";
+        document.getElementById("PLAYFIRST1").style.color = "black";
+    }
+    /*----------------------------------------------------------------------------------------------------------------------------*/
+    function Answer() {
+        document.getElementById("PLAYFIRST1").innerHTML = "Energy!";
+    }
+    /*----------------------------------------------------------------------------------------------------------------------------*/
+</script>
